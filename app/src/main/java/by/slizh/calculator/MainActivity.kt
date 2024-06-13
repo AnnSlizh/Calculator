@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private var canAddDecimal = true
     private var lastResult: String = ""
     private var lastCalculation: String = ""
+    private var isNewCalculationStarted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +56,6 @@ class MainActivity : AppCompatActivity() {
             equalsButton.setOnClickListener { onEqualsClicked() }
             allDeleteButton.setOnClickListener { onAllDeleteClicked() }
             backspaceButton.setOnClickListener { onBackspaceClicked() }
-//                percentageButton.setOnClickListener { onPercentageClicked() }
         }
     }
 
@@ -93,13 +93,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onDecimalPointClicked() {
-        if (canAddDecimal) binding.equationTextView.append(DECIMAL_POINT)
+        if (canAddDecimal) binding.equationTextView.append(DECIMAL_POINT.toString())
         canAddDecimal = false
     }
 
     private fun onOperatorClicked(view: View) {
         if (view is Button) {
             if (lastCalculation.isNotEmpty()) {
+                if (isNewCalculationStarted) lastResult = ZERO
                 binding.equationTextView.text = lastResult
                 lastCalculation = ""
             }
@@ -108,6 +109,7 @@ class MainActivity : AppCompatActivity() {
                 canAddOperation = false
                 canAddDecimal = true
             }
+            isNewCalculationStarted = false
         }
     }
 
@@ -116,6 +118,7 @@ class MainActivity : AppCompatActivity() {
         binding.resultTextView.text = ""
         lastResult = ""
         lastCalculation = ""
+        isNewCalculationStarted = false
     }
 
     private fun onBackspaceClicked() {
@@ -138,6 +141,9 @@ class MainActivity : AppCompatActivity() {
         if (equation.isEmpty() || timesDivision.isEmpty()) return ""
 
         val result = additionSubtractionCalculate(timesDivision)
+
+        if (result.isInfinite() || result.isNaN()) isNewCalculationStarted = true
+
         return result.toString()
     }
 
@@ -149,7 +155,7 @@ class MainActivity : AppCompatActivity() {
                 val operator = currentEquation[i]
                 val nextDigit = currentEquation[i + 1] as Double
                 when (operator) {
-                    '+' -> result += nextDigit
+                    PLUS -> result += nextDigit
                     '−' -> result -= nextDigit
                 }
             }
@@ -159,7 +165,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getMultiplicationDivisionResult(currentEquation: MutableList<Any>): MutableList<Any> {
         var equation = currentEquation
-        while (equation.contains('×') || equation.contains('÷')) {
+        while (equation.contains(MULTIPLICATION) || equation.contains(DIVISION)) {
             equation = multiplicationDivisionCalculate(equation)
         }
         return equation
@@ -175,12 +181,12 @@ class MainActivity : AppCompatActivity() {
                 val previousDigit = currentEquation[i - 1] as Double
                 val nextDigit = currentEquation[i + 1] as Double
                 when (operator) {
-                    '×' -> {
+                    MULTIPLICATION -> {
                         newEquation.add(previousDigit * nextDigit)
                         currentListSize = i + 1
                     }
 
-                    '÷' -> {
+                    DIVISION -> {
                         newEquation.add(previousDigit / nextDigit)
                         currentListSize = i + 1
                     }
@@ -204,10 +210,10 @@ class MainActivity : AppCompatActivity() {
         var currentDigit = ""
         var lastOperator = ' '
         for (character in binding.equationTextView.text) {
-            if (character.isDigit() || character == '.' || (character == '-' && lastOperator !in listOf(
-                    '×',
-                    '÷',
-                    '+',
+            if (character.isDigit() || character == DECIMAL_POINT || (character == '-' && lastOperator !in listOf(
+                    MULTIPLICATION,
+                    DIVISION,
+                    PLUS,
                     '-'
                 ))
             ) {
@@ -230,7 +236,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val DECIMAL_POINT = "."
+        const val ZERO = "0"
+        const val DECIMAL_POINT = '.'
         const val MINUS = '−'
         const val PLUS = '+'
         const val DIVISION = '÷'
