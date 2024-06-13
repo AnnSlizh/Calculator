@@ -7,50 +7,80 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
+
+    <View
+        android:id="@+id/inputView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/dividerView"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/dark_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/inputView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/equationTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="19dp"
         android:layout_marginEnd="19dp"
+        android:layout_marginBottom="90dp"
         android:fontFamily="@font/inter_regular"
+        android:gravity="right"
         android:textColor="@color/white"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@id/resultTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         tools:text="12+5" />
 
     <TextView
         android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="19dp"
-        android:fontFamily="@font/inter_regular"
-        android:textColor="@color/light_grey"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/equationTextView"
-        tools:text="17" />
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="19dp"
-        android:layout_marginBottom="4dp"
-        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="right"
+        android:textColor="@color/light_grey"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/dividerView"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView">
+        tools:text="17" />
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/allDeleteButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -61,17 +91,19 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/backspaceButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
                 android:backgroundTint="@color/dark_grey"
                 android:paddingHorizontal="20dp"
-                android:text="@string/plus_minus"
-                android:textColor="@color/white"
+                android:text="@string/backspace"
+                android:textColor="@color/light_green"
                 android:textSize="36sp"
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/percentageButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -83,6 +115,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/divisionButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:backgroundTint="@color/dark_grey"
@@ -100,6 +133,7 @@
             android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/sevenButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -110,6 +144,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/eightButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -121,6 +156,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/nineButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -132,6 +168,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/multiplicationButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:backgroundTint="@color/dark_grey"
@@ -149,6 +186,7 @@
             android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/fourButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -159,6 +197,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/fiveButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -170,6 +209,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/sixButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -181,6 +221,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/subtractionButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:backgroundTint="@color/dark_grey"
@@ -199,6 +240,7 @@
             android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/oneButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -209,6 +251,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/twoButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -220,6 +263,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/threeButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -231,6 +275,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/additionButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:backgroundTint="@color/dark_grey"
@@ -249,6 +294,7 @@
             android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/zeroButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -259,6 +305,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/decimalPointButton"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginEnd="20dp"
@@ -270,6 +317,7 @@
                 app:cornerRadius="9dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/equalsButton"
                 android:layout_width="166dp"
                 android:layout_height="75dp"
                 android:backgroundTint="@color/light_green"

@@ -18,6 +18,7 @@
     <string name="decimal_point">.</string>
     <string name="plus_minus">\u00B1</string>
     <string name="percentage">\u0025</string>
+    <string name="backspace">⌫</string>
     <string name="all_delete">C</string>
 
 </resources>
