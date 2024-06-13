@@ -1,9 +1,42 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight.NoActionBar">
-<!--        <item name="android:statusBarColor">@color/black</item>-->
-<!--        <item name="android:windowLightStatusBar">true</item>-->
+
+        <item name="fontFamily">@font/inter_regular</item>
     </style>
 
     <style name="Theme.Calculator" parent="Base.Theme.Calculator" />
+
+    <style name="CalculationButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">75dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:textSize">36sp</item>
+        <item name="cornerRadius">9dp</item>
+    </style>
+
+    <style name="AllDeleteButton" parent="CalculationButton">
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:textColor">@color/dark_grey</item>
+
+    </style>
+
+    <style name="OperatorButton" parent="CalculationButton">
+        <item name="android:backgroundTint">@color/dark_grey</item>
+        <item name="android:textColor">@color/light_green</item>
+    </style>
+
+    <style name="EqualsButton">
+        <item name="android:layout_width">166dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:textSize">36sp</item>
+        <item name="cornerRadius">9dp</item>
+        <item name="android:backgroundTint">@color/light_green</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="NumberButton" parent="CalculationButton">
+        <item name="android:backgroundTint">@color/dark_grey</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

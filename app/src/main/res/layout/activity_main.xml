@@ -36,14 +36,12 @@
         android:layout_marginStart="19dp"
         android:layout_marginEnd="19dp"
         android:layout_marginBottom="90dp"
-        android:fontFamily="@font/inter_regular"
         android:gravity="right"
         android:textColor="@color/white"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@id/resultTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         tools:text="12+5" />
 
     <TextView
@@ -53,12 +51,10 @@
         android:layout_marginStart="19dp"
         android:layout_marginEnd="19dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/inter_regular"
         android:gravity="right"
         android:textColor="@color/light_grey"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/dividerView"
-
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="17" />
 
@@ -81,49 +77,27 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/allDeleteButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/AllDeleteButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/red"
-                android:text="@string/all_delete"
-                android:textColor="@color/dark_grey"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/all_delete" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/backspaceButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/OperatorButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/backspace"
-                android:textColor="@color/light_green"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/backspace" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/percentageButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/OperatorButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/percentage"
-                android:textColor="@color/light_green"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/percentage" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/divisionButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:backgroundTint="@color/dark_grey"
+                style="@style/OperatorButton"
                 android:paddingHorizontal="20dp"
-                android:text="@string/division"
-                android:textColor="@color/light_green"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/division" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,49 +108,27 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sevenButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:text="@string/seven"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/seven" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/eightButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/eight"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/eight" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/nineButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/nine"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/nine" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/multiplicationButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/multiplication"
-                android:textColor="@color/light_green"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                style="@style/OperatorButton"
+                android:text="@string/multiplication" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -187,49 +139,26 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fourButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:text="@string/four"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/four" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/fiveButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/five"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/five" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sixButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/six"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/six" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/subtractionButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/subtraction"
-                android:textColor="@color/light_green"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                style="@style/OperatorButton"
+                android:text="@string/subtraction" />
 
         </LinearLayout>
 
@@ -241,49 +170,27 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/oneButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:text="@string/one"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/one" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/twoButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/two"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/two" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/threeButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/three"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/three" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/additionButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/addition"
-                android:textColor="@color/light_green"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                style="@style/OperatorButton"
+                android:text="@string/addition" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -295,37 +202,20 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/zeroButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="0" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/decimalPointButton"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                style="@style/NumberButton"
                 android:layout_marginEnd="20dp"
-                android:backgroundTint="@color/dark_grey"
-                android:paddingHorizontal="20dp"
-                android:text="@string/decimal_point"
-                android:textColor="@color/white"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                android:text="@string/decimal_point" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/equalsButton"
-                android:layout_width="166dp"
-                android:layout_height="75dp"
-                android:backgroundTint="@color/light_green"
-                android:paddingHorizontal="20dp"
-                android:text="@string/equals"
-                android:textColor="@color/dark_grey"
-                android:textSize="36sp"
-                app:cornerRadius="9dp" />
+                style="@style/EqualsButton"
+                android:text="@string/equals" />
 
         </LinearLayout>
 
